@@ -70,6 +70,7 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Include="Extensions\WindowExtensions.cs" />
+        <Compile Include="Tools\PasswordHasher.cs" />
         <Compile Include="Views\HomeWindow.xaml.cs">
           <DependentUpon>HomeWindow.xaml</DependentUpon>
         </Compile>

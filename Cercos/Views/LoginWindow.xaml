@@ -10,16 +10,16 @@
         WindowState="Maximized"
         ResizeMode="NoResize"
         Width="{x:Static SystemParameters.PrimaryScreenWidth}"
-        Height="{x:Static SystemParameters.PrimaryScreenHeight}">
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}" FontSize="30">
     <Grid>
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid Width="720">
                 <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Width="Auto">
-                    <PasswordBox x:Name="PasswordBox"
-                                 materialDesign:HintAssist.HelperText="At least 8 characters"
-                                 materialDesign:HintAssist.Hint="Password"
+                    <PasswordBox x:Name="TxtPassword"
+                                 materialDesign:HintAssist.HelperText="Al menos 8 caracteres"
+                                 materialDesign:HintAssist.Hint="Clave"
                                  materialDesign:TextFieldAssist.HasClearButton="True" Margin="0,0,0,20"/>
-                    <Button Click="ButtonBase_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Content="Ingresar" />
+                    <Button FontSize="30" Click="ButtonBase_OnClick" Height="70" Style="{StaticResource MaterialDesignRaisedButton}" Content="Ingresar" />
                 </StackPanel>
             </Grid>
         </Grid>
