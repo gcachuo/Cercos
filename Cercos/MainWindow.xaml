@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cercos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}">
     <Grid>
         
     </Grid>
