@@ -4,9 +4,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Cercos.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="450" Width="800">
+        Title="HomeWindow" Height="450" Width="800" FontSize="30">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="10">
+                    <TextBlock>Empleados</TextBlock>
+                    <Button x:Name="BtnEmpleados" Click="BtnEmpleados_OnClick">
+                        <materialDesign:PackIcon Kind="LocationEnter" />
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Margin="10">
+                    <TextBlock>Clientes</TextBlock>
+                    <Button x:Name="BtnClientes" Click="BtnClientes_OnClick">
+                        <materialDesign:PackIcon Kind="LocationEnter" />
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Cercos.Extensions;
 
 namespace Cercos.Views
 {
@@ -7,6 +8,16 @@ namespace Cercos.Views
         public HomeWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnEmpleados_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<UsersWindow>();
+        }
+
+        private void BtnClientes_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<ClientsWindow>();
         }
     }
 }
