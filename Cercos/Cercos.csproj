@@ -88,6 +88,7 @@
         <Compile Include="Database\DatabaseManager.cs" />
         <Compile Include="Extensions\WindowExtensions.cs" />
         <Compile Include="Model\User.cs" />
+        <Compile Include="Services\ClientsService.cs" />
         <Compile Include="Services\UsersService.cs" />
         <Compile Include="Tools\DotEnv.cs" />
         <Compile Include="Tools\PasswordHasher.cs" />

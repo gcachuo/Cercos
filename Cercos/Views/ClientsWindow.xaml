@@ -4,12 +4,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Cercos.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="ClientsWindow" Height="450" Width="800" FontSize="30">
     <Grid>
         <StackPanel Margin="10">
             <Button x:Name="BtnReturn" Click="BtnReturn_OnClick" Style="{StaticResource MaterialDesignRaisedButton}">Regresar</Button>
             <TextBlock>Clientes</TextBlock>
+            
+            <StackPanel Margin="10">
+                <TextBox x:Name="Name" FontSize="20" materialDesign:HintAssist.Hint="Nombre" />
+                <TextBox x:Name="Address" FontSize="20" materialDesign:HintAssist.Hint="Direccion" />
+                <TextBox x:Name="Phone" FontSize="20" materialDesign:HintAssist.Hint="Telefono" />
+                <TextBox x:Name="Email" FontSize="20" materialDesign:HintAssist.Hint="Correo" />
+                <Button x:Name="BtnGuardar" Click="BtnGuardar_OnClick" Content="Guardar" Margin="20" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
