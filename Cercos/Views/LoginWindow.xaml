@@ -16,7 +16,6 @@
             <Grid Width="720">
                 <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Width="Auto">
                     <PasswordBox x:Name="TxtPassword"
-                                 materialDesign:HintAssist.HelperText="Al menos 8 caracteres"
                                  materialDesign:HintAssist.Hint="Clave"
                                  materialDesign:TextFieldAssist.HasClearButton="True" Margin="0,0,0,20"/>
                     <Button FontSize="30" Click="ButtonBase_OnClick" Height="70" Style="{StaticResource MaterialDesignRaisedButton}" Content="Ingresar" />

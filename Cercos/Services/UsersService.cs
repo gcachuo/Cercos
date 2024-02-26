@@ -29,5 +29,12 @@ namespace Cercos.Services
 
             return users.Any(user => PasswordHasher.VerifyPassword(password, user.Password));
         }
+
+        public static List<User> GetAllUsers()
+        {
+            const string query = "SELECT * FROM Users;";
+            var users = DatabaseManager.Select<User>(query);
+            return users;
+        }
     }
 }
