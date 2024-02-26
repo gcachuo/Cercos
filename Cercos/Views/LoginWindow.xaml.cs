@@ -4,6 +4,7 @@ using System.Windows;
 using Cercos.Extensions;
 using Cercos.Services;
 using Cercos.Tools;
+using Cercos.ViewModel;
 
 namespace Cercos.Views
 {
@@ -13,12 +14,14 @@ namespace Cercos.Views
     public partial class LoginWindow
     {
         private readonly string _adminPasswordHashed;
+        private readonly SharedViewModel _sharedViewModel;
 
         public LoginWindow()
         {
             InitializeComponent();
 
             _adminPasswordHashed = PasswordHasher.HashPassword("admin");
+            _sharedViewModel = ((App)Application.Current).SharedViewModel;
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -31,9 +34,15 @@ namespace Cercos.Views
             var password = TxtPassword.Password;
 
             if (PasswordHasher.VerifyPassword(password, _adminPasswordHashed))
+            {
+                _sharedViewModel.IsAdmin = true;
                 this.Navigate<HomeWindow>();
+            }
             else if (CheckUserPassword(password))
+            {
+                _sharedViewModel.IsAdmin = false;
                 this.Navigate<HomeWindow>();
+            }
             else
                 MessageBox.Show("Clave incorrecta");
         }

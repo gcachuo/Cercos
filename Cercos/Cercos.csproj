@@ -92,6 +92,7 @@
         <Compile Include="Tools\DotEnv.cs" />
         <Compile Include="Tools\PasswordHasher.cs" />
         <Compile Include="Tools\Validation.cs" />
+        <Compile Include="ViewModel\SharedViewModel.cs" />
         <Compile Include="Views\ClientsWindow.xaml.cs">
           <DependentUpon>ClientsWindow.xaml</DependentUpon>
         </Compile>
