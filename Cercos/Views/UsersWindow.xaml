@@ -13,9 +13,9 @@
             <TextBlock>Empleados</TextBlock>
             
             <StackPanel Margin="10">
-                <TextBox FontSize="20" materialDesign:HintAssist.Hint="Nombre Completo" />
-                <TextBox FontSize="20" materialDesign:HintAssist.Hint="Clave" />
-                <Button Content="Guardar" Margin="10"/>
+                <TextBox x:Name="FullName" FontSize="20" materialDesign:HintAssist.Hint="Nombre Completo" />
+                <TextBox x:Name="Password" FontSize="20" materialDesign:HintAssist.Hint="Clave" />
+                <Button x:Name="BtnGuardar" Click="BtnGuardar_OnClick" Content="Guardar" Margin="10"/>
             </StackPanel>
         </StackPanel>
     </Grid>
