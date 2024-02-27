@@ -5,8 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Cercos.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:converters="clr-namespace:Cercos.Converters"
         mc:Ignorable="d"
         Title="UsersWindow" Height="450" Width="800" FontSize="30">
+    <Window.Resources>
+        <converters:ActionToVisibilityConverter x:Key="ActionToVisibilityConverter" />
+    </Window.Resources>
     <Grid>
         <StackPanel Margin="10">
             <Button x:Name="BtnReturn" Click="BtnReturn_OnClick" Style="{StaticResource MaterialDesignRaisedButton}"
@@ -16,11 +20,16 @@
             <TextBlock>Usuarios</TextBlock>
 
             <StackPanel Margin="10"
-                        Visibility="{Binding Action, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        Visibility="{Binding Action, Converter={StaticResource ActionToVisibilityConverter}, ConverterParameter=nuevo}">
                 <TextBox x:Name="FullName" FontSize="20" materialDesign:HintAssist.Hint="Nombre Completo" />
                 <TextBox x:Name="Password" FontSize="20" materialDesign:HintAssist.Hint="Clave"
                          materialDesign:HintAssist.HelperText="Al menos 8 caracteres" />
                 <Button x:Name="BtnGuardar" Click="BtnGuardar_OnClick" Content="Guardar" Margin="20" />
+            </StackPanel>
+
+            <StackPanel Margin="10"
+                        Visibility="{Binding Action, Converter={StaticResource ActionToVisibilityConverter}}">
+                <TextBlock>Tabla</TextBlock>
             </StackPanel>
         </StackPanel>
     </Grid>

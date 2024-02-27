@@ -18,7 +18,7 @@ namespace Cercos.Views
 
         private void BtnEmpleadosNuevo_OnClick(object sender, RoutedEventArgs e)
         {
-            this.Navigate<UsersWindow>();
+            this.Navigate<UsersWindow>("nuevo");
         }
 
         private void BtnEmpleados_OnClick(object sender, RoutedEventArgs e)
@@ -28,7 +28,7 @@ namespace Cercos.Views
 
         private void BtnClientesNuevo_OnClick(object sender, RoutedEventArgs e)
         {
-            this.Navigate<ClientsWindow>();
+            this.Navigate<ClientsWindow>("nuevo");
         }
 
         private void BtnClientes_OnClick(object sender, RoutedEventArgs e)

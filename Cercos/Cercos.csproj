@@ -85,6 +85,7 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Converters\ActionToVisibilityConverter.cs" />
         <Compile Include="Database\DatabaseManager.cs" />
         <Compile Include="Extensions\WindowExtensions.cs" />
         <Compile Include="Model\User.cs" />

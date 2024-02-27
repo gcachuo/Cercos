@@ -5,19 +5,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Cercos.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:converters="clr-namespace:Cercos.Converters"
         mc:Ignorable="d"
         Title="ClientsWindow" Height="450" Width="800" FontSize="30">
+    <Window.Resources>
+        <converters:ActionToVisibilityConverter x:Key="ActionToVisibilityConverter" />
+    </Window.Resources>
     <Grid>
         <StackPanel Margin="10">
             <Button x:Name="BtnReturn" Click="BtnReturn_OnClick" Style="{StaticResource MaterialDesignRaisedButton}">Regresar</Button>
             <TextBlock>Clientes</TextBlock>
             
-            <StackPanel Margin="10">
+            <StackPanel Margin="10"
+                        Visibility="{Binding Action, Converter={StaticResource ActionToVisibilityConverter}, ConverterParameter=nuevo}">
                 <TextBox x:Name="Name" FontSize="20" materialDesign:HintAssist.Hint="Nombre" />
                 <TextBox x:Name="Address" FontSize="20" materialDesign:HintAssist.Hint="Direccion" />
                 <TextBox x:Name="Phone" FontSize="20" materialDesign:HintAssist.Hint="Telefono" />
                 <TextBox x:Name="Email" FontSize="20" materialDesign:HintAssist.Hint="Correo" />
                 <Button x:Name="BtnGuardar" Click="BtnGuardar_OnClick" Content="Guardar" Margin="20" />
+            </StackPanel>
+
+            <StackPanel Margin="10"
+                        Visibility="{Binding Action, Converter={StaticResource ActionToVisibilityConverter}}">
+                <TextBlock>Tabla</TextBlock>
             </StackPanel>
         </StackPanel>
     </Grid>

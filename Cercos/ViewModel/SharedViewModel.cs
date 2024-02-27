@@ -5,7 +5,7 @@ namespace Cercos.ViewModel
     public class SharedViewModel : INotifyPropertyChanged
     {
         private bool _isAdmin;
-        private bool _action;
+        private string _action;
 
         public bool IsAdmin
         {
@@ -20,7 +20,7 @@ namespace Cercos.ViewModel
             }
         }
 
-        public bool Action
+        public string Action
         {
             get { return _action; }
             set
