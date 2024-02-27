@@ -13,6 +13,7 @@ namespace Cercos.Extensions
                 Width = SystemParameters.PrimaryScreenWidth,
                 Height = SystemParameters.PrimaryScreenHeight
             };
+            window.DataContext = ((App)Application.Current).SharedViewModel;
             window.Show();
             currentWindow.Close();
         }

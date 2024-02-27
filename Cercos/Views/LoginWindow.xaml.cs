@@ -14,14 +14,11 @@ namespace Cercos.Views
     public partial class LoginWindow
     {
         private readonly string _adminPasswordHashed;
-        private readonly SharedViewModel _sharedViewModel;
 
         public LoginWindow()
         {
             InitializeComponent();
-
             _adminPasswordHashed = PasswordHasher.HashPassword("admin");
-            _sharedViewModel = ((App)Application.Current).SharedViewModel;
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -31,16 +28,17 @@ namespace Cercos.Views
 
         private void Login()
         {
+            var viewModel = ((App)Application.Current).SharedViewModel;
             var password = TxtPassword.Password;
 
             if (PasswordHasher.VerifyPassword(password, _adminPasswordHashed))
             {
-                _sharedViewModel.IsAdmin = true;
+                viewModel.IsAdmin = true;
                 this.Navigate<HomeWindow>();
             }
             else if (CheckUserPassword(password))
             {
-                _sharedViewModel.IsAdmin = false;
+                viewModel.IsAdmin = false;
                 this.Navigate<HomeWindow>();
             }
             else

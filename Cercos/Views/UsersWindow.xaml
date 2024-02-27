@@ -15,7 +15,8 @@
             </Button>
             <TextBlock>Usuarios</TextBlock>
 
-            <StackPanel Margin="10">
+            <StackPanel Margin="10"
+                        Visibility="{Binding Action, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <TextBox x:Name="FullName" FontSize="20" materialDesign:HintAssist.Hint="Nombre Completo" />
                 <TextBox x:Name="Password" FontSize="20" materialDesign:HintAssist.Hint="Clave"
                          materialDesign:HintAssist.HelperText="Al menos 8 caracteres" />

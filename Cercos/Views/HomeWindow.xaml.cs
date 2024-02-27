@@ -1,18 +1,14 @@
 ﻿using System.Windows;
 using Cercos.Extensions;
+using Cercos.ViewModel;
 
 namespace Cercos.Views
 {
     public partial class HomeWindow : Window
     {
-        public bool IsAdmin { get; set; }
-
         public HomeWindow()
         {
             InitializeComponent();
-            var sharedViewModel = ((App)Application.Current).SharedViewModel;
-            IsAdmin = sharedViewModel.IsAdmin;
-            DataContext = this;
         }
 
         private void BtnReturn_OnClick(object sender, RoutedEventArgs e)
