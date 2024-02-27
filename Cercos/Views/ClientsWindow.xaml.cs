@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using Cercos.Extensions;
 using Cercos.Services;
-using Cercos.Tools;
+using Validation = Cercos.Tools.Validation;
 
 namespace Cercos.Views
 {
@@ -11,6 +12,7 @@ namespace Cercos.Views
         public ClientsWindow()
         {
             InitializeComponent();
+            DataGrid.ItemsSource = new ClientsService().GetAllClients();
         }
 
         private void BtnReturn_OnClick(object sender, RoutedEventArgs e)
@@ -40,6 +42,11 @@ namespace Cercos.Views
             Email.Text = "";
 
             MessageBox.Show("Guardado correctamente.");
+        }
+
+        private void DataGrid_OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            
         }
     }
 }

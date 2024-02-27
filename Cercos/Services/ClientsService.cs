@@ -1,4 +1,7 @@
-﻿using Cercos.Database;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Cercos.Database;
+using Cercos.Model;
 
 namespace Cercos.Services
 {
@@ -14,6 +17,12 @@ namespace Cercos.Services
                 new("@Phone", phone),
                 new("@Email", email),
             });
+        }
+
+        public List<Client> GetAllClients()
+        {
+            const string query = "SELECT * FROM Clients;";
+            return Select<Client>(query);
         }
     }
 }

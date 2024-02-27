@@ -88,6 +88,7 @@
         <Compile Include="Converters\ActionToVisibilityConverter.cs" />
         <Compile Include="Database\DatabaseManager.cs" />
         <Compile Include="Extensions\WindowExtensions.cs" />
+        <Compile Include="Model\Client.cs" />
         <Compile Include="Model\User.cs" />
         <Compile Include="Services\ClientsService.cs" />
         <Compile Include="Services\UsersService.cs" />
@@ -132,6 +133,7 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Include="docker-compose.yml" />
+      <Content Include="initial_schema.sql" />
       <Content Include="Microsoft.Windows.Design.Extensibility.dll" />
     </ItemGroup>
     <ItemGroup>
