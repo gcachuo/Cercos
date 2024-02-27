@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using Cercos.Extensions;
 using Cercos.Services;
 using Cercos.Tools;
+using Validation = Cercos.Tools.Validation;
 
 namespace Cercos.Views
 {
@@ -11,6 +13,7 @@ namespace Cercos.Views
         public UsersWindow()
         {
             InitializeComponent();
+            DataGrid.ItemsSource = UsersService.GetAllUsers();
         }
 
         private void BtnReturn_OnClick(object sender, RoutedEventArgs e)
@@ -43,6 +46,14 @@ namespace Cercos.Views
             Password.Text = "";
 
             MessageBox.Show("Guardado correctamente.");
+        }
+
+        private void DataGrid_OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "Password")
+            {
+                e.Column.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

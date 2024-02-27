@@ -29,7 +29,7 @@
 
             <StackPanel Margin="10"
                         Visibility="{Binding Action, Converter={StaticResource ActionToVisibilityConverter}}">
-                <TextBlock>Tabla</TextBlock>
+                <DataGrid x:Name="DataGrid" AutoGenerateColumns="True" IsReadOnly="True" AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn"/>
             </StackPanel>
         </StackPanel>
     </Grid>
