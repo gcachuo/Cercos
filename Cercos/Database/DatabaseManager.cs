@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows;
 using Cercos.Tools;
 
 namespace Cercos.Database
@@ -37,7 +38,7 @@ namespace Cercos.Database
             }
             catch (Exception ex)
             {
-                Console.WriteLine(@"Error: " + ex.Message);
+                MessageBox.Show(@"Error: " + ex.Message);
             }
         }
 
@@ -78,7 +79,7 @@ namespace Cercos.Database
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return null;
             }
         }
