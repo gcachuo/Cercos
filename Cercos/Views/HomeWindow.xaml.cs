@@ -15,19 +15,29 @@ namespace Cercos.Views
             DataContext = this;
         }
 
+        private void BtnReturn_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<LoginWindow>();
+        }
+
+        private void BtnEmpleadosNuevo_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<UsersWindow>();
+        }
+
         private void BtnEmpleados_OnClick(object sender, RoutedEventArgs e)
         {
             this.Navigate<UsersWindow>();
         }
 
-        private void BtnClientes_OnClick(object sender, RoutedEventArgs e)
+        private void BtnClientesNuevo_OnClick(object sender, RoutedEventArgs e)
         {
             this.Navigate<ClientsWindow>();
         }
 
-        private void BtnReturn_OnClick(object sender, RoutedEventArgs e)
+        private void BtnClientes_OnClick(object sender, RoutedEventArgs e)
         {
-            this.Navigate<LoginWindow>();
+            this.Navigate<ClientsWindow>();
         }
     }
 }

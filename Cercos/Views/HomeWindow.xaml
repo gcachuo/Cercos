@@ -28,16 +28,26 @@
                     <StackPanel Margin="10"
                                 Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <TextBlock>Usuarios</TextBlock>
-                        <Button x:Name="BtnEmpleados" Click="BtnEmpleados_OnClick">
-                            <materialDesign:PackIcon Kind="LocationEnter" />
-                        </Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="BtnEmpleadosNuevo" Margin="5" Click="BtnEmpleadosNuevo_OnClick">
+                                <materialDesign:PackIcon Kind="Add" />
+                            </Button>
+                            <Button x:Name="BtnEmpleados" Click="BtnEmpleados_OnClick">
+                                <materialDesign:PackIcon Kind="Table" />
+                            </Button>
+                        </StackPanel>
                     </StackPanel>
 
                     <StackPanel Margin="10">
                         <TextBlock>Clientes</TextBlock>
-                        <Button x:Name="BtnClientes" Click="BtnClientes_OnClick">
-                            <materialDesign:PackIcon Kind="LocationEnter" />
-                        </Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="BtnClientesNuevo" Margin="5" Click="BtnClientesNuevo_OnClick">
+                                <materialDesign:PackIcon Kind="Add" />
+                            </Button>
+                            <Button x:Name="BtnClientes" Click="BtnClientes_OnClick">
+                                <materialDesign:PackIcon Kind="Table" />
+                            </Button>
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Grid>
