@@ -89,6 +89,7 @@
         <Compile Include="Database\DatabaseManager.cs" />
         <Compile Include="Extensions\WindowExtensions.cs" />
         <Compile Include="Model\Client.cs" />
+        <Compile Include="Model\Shape.cs" />
         <Compile Include="Model\User.cs" />
         <Compile Include="Services\ClientsService.cs" />
         <Compile Include="Services\ShapesService.cs" />

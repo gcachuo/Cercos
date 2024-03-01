@@ -13,6 +13,7 @@ namespace Cercos.Views
         {
             InitializeComponent();
             Client.ItemsSource = new ClientsService().GetAllClients();
+            DataGrid.ItemsSource = new ShapesService().GetAll();
         }
 
         private void BtnReturn_OnClick(object sender, RoutedEventArgs e)

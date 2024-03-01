@@ -1,4 +1,6 @@
-﻿using Cercos.Database;
+﻿using System.Collections;
+using Cercos.Database;
+using Cercos.Model;
 
 namespace Cercos.Services
 {
@@ -13,6 +15,12 @@ namespace Cercos.Services
                 new("@Code", code),
                 new("@Name", name),
             });
+        }
+
+        public IEnumerable GetAll()
+        {
+            const string query = "SELECT s.Id,c.Name Client,s.Code,s.Name FROM Shapes s inner join Clients c on c.Id=s.ClientId;";
+            return Select<Shape>(query);
         }
     }
 }
