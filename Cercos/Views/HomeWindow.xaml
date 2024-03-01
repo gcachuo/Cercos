@@ -49,6 +49,18 @@
                             </Button>
                         </StackPanel>
                     </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock>Estilos</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="BtnEstilosNuevo" Margin="5" Click="BtnEstilosNuevo_OnClick">
+                                <materialDesign:PackIcon Kind="Add" />
+                            </Button>
+                            <Button x:Name="BtnEstilos" Click="BtnEstilos_OnClick">
+                                <materialDesign:PackIcon Kind="Table" />
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </StackPanel>

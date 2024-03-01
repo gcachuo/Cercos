@@ -35,5 +35,15 @@ namespace Cercos.Views
         {
             this.Navigate<ClientsWindow>();
         }
+
+        private void BtnEstilosNuevo_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<ShapesWindow>("nuevo");
+        }
+
+        private void BtnEstilos_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<ShapesWindow>();
+        }
     }
 }

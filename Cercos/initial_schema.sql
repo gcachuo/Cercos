@@ -12,3 +12,13 @@ create table Clients
     Phone   varchar(100),
     Email   varchar(100)
 );
+create table Shapes
+(
+    Id       int primary key identity (1,1) not null,
+    ClientId int,
+    Code     varchar(50) unique,
+    Name     varchar(50),
+    constraint Shapes_Clients_ClientId_fk
+        foreign key (ClientId) references Clients
+            on update cascade on delete cascade
+)
