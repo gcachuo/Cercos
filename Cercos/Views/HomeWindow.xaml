@@ -61,6 +61,18 @@
                             </Button>
                         </StackPanel>
                     </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock>Ordenes</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="BtnOrdenesNuevo" Margin="5" Click="BtnOrdenesNuevo_OnClick">
+                                <materialDesign:PackIcon Kind="Add" />
+                            </Button>
+                            <Button x:Name="BtnOrdenes" Click="BtnOrdenes_OnClick">
+                                <materialDesign:PackIcon Kind="Table" />
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </StackPanel>

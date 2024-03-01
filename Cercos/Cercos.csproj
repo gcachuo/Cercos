@@ -108,6 +108,9 @@
           <DependentUpon>LoginWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Views\OrdersWindow.xaml.cs">
+          <DependentUpon>OrdersWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Views\ShapesWindow.xaml.cs">
           <DependentUpon>ShapesWindow.xaml</DependentUpon>
         </Compile>
@@ -148,6 +151,7 @@
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
       </Page>
+      <Page Include="Views\OrdersWindow.xaml" />
       <Page Include="Views\ShapesWindow.xaml" />
       <Page Include="Views\UsersWindow.xaml" />
     </ItemGroup>

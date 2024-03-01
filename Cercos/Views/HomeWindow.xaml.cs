@@ -45,5 +45,15 @@ namespace Cercos.Views
         {
             this.Navigate<ShapesWindow>();
         }
+
+        private void BtnOrdenesNuevo_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<OrdersWindow>("nuevo");
+        }
+
+        private void BtnOrdenes_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate<OrdersWindow>();
+        }
     }
 }

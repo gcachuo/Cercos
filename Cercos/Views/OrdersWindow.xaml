@@ -1,0 +1,33 @@
+﻿<Window x:Class="Cercos.Views.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Cercos.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:converters="clr-namespace:Cercos.Converters"
+        mc:Ignorable="d"
+        Title="OrdersWindow" Height="450" Width="800" FontSize="30">
+    <Window.Resources>
+        <converters:ActionToVisibilityConverter x:Key="ActionToVisibilityConverter" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="10">
+            <Button x:Name="BtnReturn" Click="BtnReturn_OnClick" Style="{StaticResource MaterialDesignRaisedButton}">Regresar</Button>
+            <TextBlock>Ordenes de Produccion</TextBlock>
+            
+            <StackPanel Margin="10"
+                        Visibility="{Binding Action, Converter={StaticResource ActionToVisibilityConverter}, ConverterParameter=nuevo}">
+                <ComboBox SelectionChanged="Client_OnSelectionChanged" x:Name="Client" DisplayMemberPath="Name" SelectedValuePath="Id" materialDesign:HintAssist.Hint="Cliente" FontSize="20" Style="{DynamicResource MaterialDesignComboBox}"/>
+                <ComboBox SelectionChanged="Shape_OnSelectionChanged" x:Name="Shape" DisplayMemberPath="Name" SelectedValuePath="Id" materialDesign:HintAssist.Hint="Estilo" FontSize="20" Style="{DynamicResource MaterialDesignComboBox}"/>
+                
+                <Button x:Name="BtnGuardar" Click="BtnGuardar_OnClick" Content="Guardar" Margin="20" />
+            </StackPanel>
+
+            <StackPanel Margin="10"
+                        Visibility="{Binding Action, Converter={StaticResource ActionToVisibilityConverter}}">
+                <DataGrid x:Name="DataGrid" AutoGenerateColumns="True" IsReadOnly="True" AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -42,10 +42,14 @@ namespace Cercos.Database
             }
         }
 
-        public List<T> Select<T>(string query) where T:class, new()
+        public List<T> Select<T>(string query, List<SqlParameter> parameters = default) where T : class, new()
         {
             using var connection = new SqlConnection(_connectionString);
             var command = new SqlCommand(query, connection);
+
+            if (parameters is not null)
+                foreach (var parameter in parameters)
+                    command.Parameters.AddWithValue(parameter.ParameterName, parameter.Value);
 
             try
             {
@@ -70,6 +74,7 @@ namespace Cercos.Database
                             continue;
                         }
                     }
+
                     list.Add(obj);
                 }
 
