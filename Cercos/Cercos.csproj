@@ -92,6 +92,7 @@
         <Compile Include="Model\Shape.cs" />
         <Compile Include="Model\User.cs" />
         <Compile Include="Services\ClientsService.cs" />
+        <Compile Include="Services\OrdersService.cs" />
         <Compile Include="Services\ShapesService.cs" />
         <Compile Include="Services\UsersService.cs" />
         <Compile Include="Tools\DotEnv.cs" />

@@ -1,8 +1,9 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using Cercos.Extensions;
 using Cercos.Services;
-using Cercos.ViewModel;
+using Validation = Cercos.Tools.Validation;
 
 namespace Cercos.Views
 {
@@ -21,6 +22,21 @@ namespace Cercos.Views
 
         private void BtnGuardar_OnClick(object sender, RoutedEventArgs e)
         {
+            var clientId = Client.SelectedValue;
+            var shapeId = Shape.SelectedValue;
+
+            if (!Validation.ValidateFields(new List<string> { clientId?.ToString(), shapeId?.ToString() }))
+            {
+                MessageBox.Show("Llene todos los campos");
+                return;
+            }
+
+            new OrdersService().Insert((int)clientId!, (int)shapeId!);
+
+            Client.SelectedIndex = -1;
+            Shape.SelectedIndex = -1;
+
+            MessageBox.Show("Guardado correctamente.");
         }
 
         private void DataGrid_OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -29,7 +45,6 @@ namespace Cercos.Views
 
         private void Shape_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
         }
 
         private void Client_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
