@@ -23,6 +23,7 @@
                 <TextBox x:Name="Name" FontSize="20" materialDesign:HintAssist.Hint="Nombre" />
                 <ComboBox x:Name="Material" SelectionChanged="Material_OnSelectionChanged" DisplayMemberPath="Name" SelectedValuePath="Id" materialDesign:HintAssist.Hint="Material"  FontSize="20" Style="{DynamicResource MaterialDesignComboBox}"/>
                 <TextBox x:Name="Measure" FontSize="20" materialDesign:HintAssist.Hint="Medida" />
+                <ComboBox x:Name="Color" DisplayMemberPath="Name" SelectedValuePath="Id" materialDesign:HintAssist.Hint="Color"  FontSize="20" Style="{DynamicResource MaterialDesignComboBox}"/>
                 
                 <Button x:Name="BtnGuardar" Click="BtnGuardar_OnClick" Content="Guardar" Margin="20" />
             </StackPanel>

@@ -69,3 +69,28 @@ VALUES (7, N'Mixto',2);
 INSERT INTO Materials (Id, Name, MeasureId)
 VALUES (8, N'Otro',2);
 SET IDENTITY_INSERT Materials OFF;
+create table Colors
+(
+    Id   char primary key not null,
+    Name varchar(50) unique
+);
+INSERT INTO Colors (Id, Name) VALUES ('1', N'Negro');
+INSERT INTO Colors (Id, Name) VALUES ('2', N'Cafe');
+INSERT INTO Colors (Id, Name) VALUES ('3', N'Natural');
+INSERT INTO Colors (Id, Name) VALUES ('4', N'Blanco');
+INSERT INTO Colors (Id, Name) VALUES ('5', N'Combinado');
+INSERT INTO Colors (Id, Name) VALUES ('6', N'Gris');
+INSERT INTO Colors (Id, Name) VALUES ('A', N'Azul');
+INSERT INTO Colors (Id, Name) VALUES ('S', N'Rosa');
+INSERT INTO Colors (Id, Name) VALUES ('M', N'Amarillo');
+INSERT INTO Colors (Id, Name) VALUES ('V', N'Verde');
+INSERT INTO Colors (Id, Name) VALUES ('R', N'Rojo');
+INSERT INTO Colors (Id, Name) VALUES ('N', N'Naranja');
+INSERT INTO Colors (Id, Name) VALUES ('B', N'Beige');
+INSERT INTO Colors (Id, Name) VALUES ('F', N'Fucsia');
+INSERT INTO Colors (Id, Name) VALUES ('C', N'Cristal');
+INSERT INTO Colors (Id, Name) VALUES ('J', N'Cajeta');
+INSERT INTO Colors (Id, Name) VALUES ('O', N'Coral');
+INSERT INTO Colors (Id, Name) VALUES ('L', N'Lila');
+INSERT INTO Colors (Id, Name) VALUES ('E', N'Menta');
+INSERT INTO Colors (Id, Name) VALUES ('T', N'Turquesa');

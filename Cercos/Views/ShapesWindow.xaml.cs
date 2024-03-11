@@ -17,6 +17,7 @@ namespace Cercos.Views
             Client.ItemsSource = new ClientsService().GetAllClients();
             DataGrid.ItemsSource = new ShapesService().GetAll();
             Material.ItemsSource = new MaterialsService().GetAll();
+            Color.ItemsSource = new ColorsService().GetAll();
         }
 
         private void BtnReturn_OnClick(object sender, RoutedEventArgs e)
