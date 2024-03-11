@@ -89,10 +89,14 @@
         <Compile Include="Database\DatabaseManager.cs" />
         <Compile Include="Extensions\WindowExtensions.cs" />
         <Compile Include="Model\Client.cs" />
+        <Compile Include="Model\Material.cs" />
+        <Compile Include="Model\Measure.cs" />
         <Compile Include="Model\Order.cs" />
         <Compile Include="Model\Shape.cs" />
         <Compile Include="Model\User.cs" />
         <Compile Include="Services\ClientsService.cs" />
+        <Compile Include="Services\MaterialsService.cs" />
+        <Compile Include="Services\MeasuresService.cs" />
         <Compile Include="Services\OrdersService.cs" />
         <Compile Include="Services\ShapesService.cs" />
         <Compile Include="Services\UsersService.cs" />

@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Cercos.Extensions;
 using Cercos.Services;
+using Cercos.ViewModel;
 using Validation = Cercos.Tools.Validation;
 
 namespace Cercos.Views
@@ -12,8 +13,10 @@ namespace Cercos.Views
         public ShapesWindow()
         {
             InitializeComponent();
+            
             Client.ItemsSource = new ClientsService().GetAllClients();
             DataGrid.ItemsSource = new ShapesService().GetAll();
+            Material.ItemsSource = new MaterialsService().GetAll();
         }
 
         private void BtnReturn_OnClick(object sender, RoutedEventArgs e)
@@ -44,6 +47,12 @@ namespace Cercos.Views
             Name.Clear();
 
             MessageBox.Show("Guardado correctamente.");
+        }
+
+        private void Material_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var measure = new MeasuresService().GetSingleFromMaterial((int)Material.SelectedValue);
+            MaterialDesignThemes.Wpf.HintAssist.SetHelperText(Measure, measure.Name);
         }
     }
 }
